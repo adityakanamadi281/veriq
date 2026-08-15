@@ -1,0 +1,66 @@
+# ──────────────────────────────────────────────────────────────
+# Secrets — never commit. Keep .env.example files tracked.
+# ──────────────────────────────────────────────────────────────
+.env
+.env.*
+!/.env.example
+!frontend/.env.example
+# (backend has no .env.example; its .env is always ignored)
+
+# ──────────────────────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+
+# Caches / test / lint artifacts
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.egg-info/
+build/
+dist/
+
+# ──────────────────────────────────────────────────────────────
+# Node / frontend
+# ──────────────────────────────────────────────────────────────
+node_modules/
+.vite/
+.next/
+.nuxt/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+frontend/dist/
+dist/
+
+# ──────────────────────────────────────────────────────────────
+# Editor / OS
+# ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ──────────────────────────────────────────────────────────────
+# Claude Code local settings (keep examples + skills/rules tracked)
+# ──────────────────────────────────────────────────────────────
+.claude/settings.json
+.claude/settings.local.json

@@ -1,0 +1,36 @@
+[project]
+name = "veriq" 
+version = "0.1.0"
+description = "AURA - AI Readiness Assessment Framework"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.34",
+  "pydantic>=2.10",
+  "pydantic-settings>=2.7",
+  "supabase>=2.15",
+  "google-genai>=1.0",
+  "python-multipart>=0.0.20",
+  "pypdf>=5.0",
+  "httpx>=0.28",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.25",
+  "ruff>=0.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# B008 is idiomatic for FastAPI (Depends/File/Header in default arguments).
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
+testpaths = ["backend/tests"]
