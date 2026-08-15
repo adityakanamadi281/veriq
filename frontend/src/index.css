@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm off-white canvas, near-black ink, one restrained dark accent. */
+    --background: 40 20% 98%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 40 14% 96%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 40 12% 95%;
+    --muted-foreground: 0 0% 42%;
+
+    --accent: 40 14% 94%;
+    --accent-foreground: 0 0% 12%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 40 20% 98%;
+
+    --border: 40 12% 90%;
+    --input: 40 12% 88%;
+    --ring: 0 0% 12%;
+
+    /* Restrained semantic tones — used sparingly for classification. */
+    --success: 152 34% 36%;
+    --warning: 36 64% 42%;
+    --danger: 0 58% 44%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    font-synthesis: none;
+  }
+
+  /* Calm, restrained focus ring. */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring) / 0.35);
+    border-radius: calc(var(--radius) - 4px);
+  }
+
+  ::selection {
+    background: hsl(var(--foreground) / 0.12);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--foreground) / 0.04),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+}
