@@ -25,7 +25,7 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
     try {
       if (isSignup) {
         await signUp(email, password);
-        toast.success("Account created. Welcome to AURA.");
+        toast.success("Account created. Welcome to VERIQ.");
       } else {
         await signIn(email, password);
         toast.success("Signed in");
@@ -49,7 +49,7 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-[13px] font-semibold">
             A
           </span>
-          <span className="font-display text-[15px] font-semibold tracking-tightish">AURA</span>
+          <span className="font-display text-[15px] font-semibold tracking-tightish">VERIQ</span>
         </Link>
 
         <div className="mb-7 space-y-2">
@@ -105,7 +105,7 @@ export function AuthPage({ mode }: { mode: "signin" | "signup" }) {
             </>
           ) : (
             <>
-              New to AURA?{" "}
+              New to VERIQ?{" "}
               <Link to="/signup" className="font-medium text-foreground hover:underline">
                 Create an account
               </Link>

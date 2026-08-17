@@ -23,7 +23,7 @@ export function Landing() {
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-[13px] font-semibold">
             A
           </span>
-          <span className="font-display text-[15px] font-semibold tracking-tightish">AURA</span>
+          <span className="font-display text-[15px] font-semibold tracking-tightish">VERIQ</span>
         </div>
         <div className="flex items-center gap-2">
           {user ? (
@@ -84,7 +84,7 @@ export function Landing() {
 
       <footer className="border-t border-border py-6">
         <div className="container text-xs text-muted-foreground">
-          AURA — an evidence-led, adaptive assessment. The interface stays calm;
+          VERIQ — an evidence-led, adaptive assessment. The interface stays calm;
           the intelligence shows through the result.
         </div>
       </footer>

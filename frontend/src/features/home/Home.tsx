@@ -42,7 +42,7 @@ export function Home() {
       <PageHeading
         eyebrow="Home"
         title={user?.email ? `Welcome back` : "Welcome"}
-        description="AURA understands your background, runs an adaptive assessment, and gives you an evidence-based view of your readiness."
+        description="VERIQ understands your background, runs an adaptive assessment, and gives you an evidence-based view of your readiness."
       />
 
       <div className="rounded-xl border border-border bg-card p-6 shadow-[0_1px_2px_0_hsl(var(--foreground)/0.04)]">

@@ -1,4 +1,4 @@
-# AURA — Claude Code Project Guide
+# veriq — Claude Code Project Guide
 
 Read `.claude/instructions.md` before making implementation changes.
 

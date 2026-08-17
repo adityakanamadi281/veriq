@@ -7,7 +7,7 @@
 
 ## 1. What is this system?
 
-**VERIQ** (product name **AURA — AI Readiness Assessment**) is a premium,
+**VERIQ** (product name **veriq — AI Readiness Assessment**) is a premium,
 candidate-facing application that measures how ready a person is for an
 **AI-first engineering role**.
 

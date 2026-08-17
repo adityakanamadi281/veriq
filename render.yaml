@@ -1,0 +1,53 @@
+# Render Blueprint — veriq backend (FastAPI).
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Deploy: Dashboard → New → Blueprint → select this repo. Render reads this file
+# and creates the `veriq-backend` web service. Secrets are marked `sync: false`
+# so you enter them once in the Render dashboard (they are never committed).
+
+services:
+  - type: web
+    name: veriq-backend
+    runtime: python
+    rootDirectory: backend
+    # Python 3.12 matches pyproject.toml `requires-python = ">=3.12"`.
+    # Pinned via the PYTHON_VERSION env var below.
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      # --- Runtime / Python ---
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: APP_ENV
+        value: production
+
+      # --- Gemini (server-side only) ---
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+
+      # --- Supabase (server-side; service-role bypasses RLS) ---
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+      # --- Database (Supabase Postgres connection string, optional) ---
+      - key: DATABASE_URL
+        sync: false
+
+      # --- URLs (fill after first deploy, once Render + Vercel domains are known) ---
+      # BACKEND_URL is this service's public URL, e.g. https://veriq-backend.onrender.com
+      - key: BACKEND_URL
+        sync: false
+      # FRONTEND_URL drives the backend's CORS allow-list (comma-separated).
+      # Set to your Vercel URL, e.g. https://veriq.vercel.app
+      # Include preview URLs too if you want previews to call the API:
+      #   https://veriq.vercel.app,https://veriq-git-main-<user>.vercel.app
+      - key: FRONTEND_URL
+        sync: false

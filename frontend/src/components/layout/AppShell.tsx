@@ -30,7 +30,7 @@ export function AppShell() {
               <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground text-[13px] font-semibold">
                 A
               </span>
-              <span className="font-display text-[15px] font-semibold tracking-tightish">AURA</span>
+              <span className="font-display text-[15px] font-semibold tracking-tightish">VERIQ</span>
             </NavLink>
             <nav className="hidden items-center gap-1 sm:flex">
               {navItems.map((item) => (
@@ -88,7 +88,7 @@ export function AppShell() {
 
       <footer className="border-t border-border py-6">
         <div className="container flex items-center justify-between text-xs text-muted-foreground">
-          <span>AURA — AI Readiness Assessment</span>
+          <span>VERIQ — AI Readiness Assessment</span>
           <span>Evidence-led. Adaptive. Calm.</span>
         </div>
       </footer>
